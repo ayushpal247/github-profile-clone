@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ayushpal247 (ayushpal246) Â· GitHub Clone</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+    <header class="navbar">
+        <div class="container navbar-container">
+            <div class="navbar-left">
+                <button class="menu-btn"><svg height="16" viewBox="0 0 16 16" width="16"><path fill="currentColor" d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z"></path></svg></button>
+                <a href="index.html">
+                    <svg height="32" viewBox="0 0 16 16" version="1.1" width="32" class="octicon octicon-mark-github">
+                        <path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                    </svg>
+                </a>
+                <span class="navbar-user">ayushpal247</span>
+                <div class="search-container">
+                    <input type="text" placeholder="Search or jump to..." class="search-input">
+                </div>
+            </div>
+            <div class="navbar-right">
+                <div class="nav-icons">
+                    <button class="nav-btn" title="Create new..."><svg height="16" viewBox="0 0 16 16" width="16"><path fill="currentColor" d="M11 1.75V3h2.25a.75.75 0 0 1 0 1.5H11v8.75a.75.75 0 0 1-1.5 0V4.5H7.25a.75.75 0 0 1 0-1.5H9.5V1.75a.75.75 0 0 1 1.5 0ZM4.5 9v4.25a.75.75 0 0 1-1.5 0V9H.75a.75.75 0 0 1 0-1.5H3V3.25a.75.75 0 0 1 1.5 0V7.5h2.25a.75.75 0 0 1 0 1.5H4.5Z"></path></svg></button>
+                    <button class="nav-btn" title="Issues"><svg height="16" viewBox="0 0 16 16" width="16"><path fill="currentColor" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path><path fill="currentColor" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path></svg></button>
+                    <button class="nav-btn" title="Pull requests"><svg height="16" viewBox="0 0 16 16" width="16"><path fill="currentColor" d="M1.5 3.25a2.25 2.25 0 1 1 3 2.122v5.256a2.251 2.251 0 1 1-1.5 0V5.372A2.25 2.25 0 0 1 1.5 3.25Zm5.677-.177L4.97 5.273a.75.75 0 1 0 1.06 1.06l1.25-1.25V13.5a.75.75 0 0 0 1.5 0V5.083l1.25 1.25a.75.75 0 0 0 1.06-1.06L8.823 3.073a.75.75 0 0 0-1.06 0ZM3 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Zm0 9.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z"></path></svg></button>
+                    <button class="nav-btn" title="Inbox"><svg height="16" viewBox="0 0 16 16" width="16"><path fill="currentColor" d="M2.8 2.06A1.75 1.75 0 0 1 4.41 1h7.18c.7 0 1.333.417 1.61 1.06l2.74 6.395c.04.093.06.194.06.295v4.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25v-4.5c0-.101.02-.202.06-.295L2.8 2.06Zm1.61.44a.25.25 0 0 0-.23.15L1.54 8.5h4.21a1.75 1.75 0 0 1 3.5 0h4.21l-2.64-6.15a.25.25 0 0 0-.23-.15H4.41ZM1.5 10v3.25c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V10h-4.25a3.25 3.25 0 0 1-6.5 0H1.5Z"></path></svg></button>
+                    <a href="index.html"><img src="https://github.com/identicons/ayushpal247.png" alt="Profile" class="nav-avatar"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <aside class="sidebar">
+            <div class="profile-avatar-container">
+                <img src="https://github.com/ayushpal247.png" alt="ayushpal247" class="profile-avatar">
+                <div class="status-badge">
+                    <span class="status-emoji">ðŸŽ¯</span>
+                </div>
+            </div>
+            <div class="profile-names">
+                <h1 class="display-name">Ayush Pal</h1>
+                <h2 class="username">ayushpal247</h2>
+            </div>
+            <div class="profile-bio">
+                Software Engineer | DSA Enthusiast | Building things with C and Python.
+            </div>
+            <button class="btn btn-block btn-secondary">Edit profile</button>
+            <div class="profile-stats">
+                <a href="followers.html"><svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236 5.507 5.507 0 0 1 3.102-4.083A3.477 3.477 0 0 1 2 5.5ZM5.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path></svg> <span>0</span> followers</a> Â· 
+                <a href="#"><span>0</span> following</a>
+            </div>
+        </aside>
+
+        <main class="content">
+            <nav class="tabs">
+                <a href="index.html" class="tab active">
+                    <svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75ZM1.5 6.5v7.75c0 .138.112.25.25.25H7v-8H1.5ZM8.5 14.5h5.75a.25.25 0 0 0 .25-.25V6.5h-6v8ZM1.75 1.5a.25.25 0 0 0-.25.25V5h13V1.75a.25.25 0 0 0-.25-.25H1.75Z"></path></svg>
+                    Overview
+                </a>
+                <a href="repositories.html" class="tab">
+                    <svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7l.01.01a.75.75 0 1 1-1.072 1.043 2.474 2.474 0 0 1-.474-1.253V2.5Z"></path></svg>
+                    Repositories <span class="counter">5</span>
+                </a>
+                <a href="#" class="tab">
+                    <svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75ZM1.5 1.75v12.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"></path></svg>
+                    Projects
+                </a>
+                <a href="#" class="tab">
+                    <svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M8.878.392a1.75 1.75 0 0 0-1.756 0l-5.25 3.045A1.75 1.75 0 0 0 1 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 0 0 1.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392ZM7.875 1.689a.25.25 0 0 1 .25 0l4.63 2.685L8 7.033l-4.755-2.66 4.63-2.684ZM2.5 5.677 7.25 8.33v5.393l-4.522-2.622A.25.25 0 0 1 2.5 11.049V5.677Zm9.5 5.372a.25.25 0 0 1-.128.217l-4.522 2.622V8.33L12 5.677v5.372Z"></path></svg>
+                    Packages
+                </a>
+                <a href="stars.html" class="tab">
+                    <svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
+                    Stars <span class="counter">1</span>
+                </a>
+            </nav>
+
+            <section class="section pinned-repos">
+                <div class="section-header">
+                    <h3>Popular repositories</h3>
+                    <a href="#" class="customize-link">Customize your pins</a>
+                </div>
+                <div class="repo-grid">
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="repo-detail.html" class="repo-name">lab-experiments---C</a>
+                            <span class="label">Public</span>
+                        </div>
+                        <p class="repo-description">lab experiments for c programming</p>
+                        <div class="repo-meta">
+                            <span class="repo-lang"><span class="lang-color c"></span> C</span>
+                        </div>
+                    </div>
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="repo-100-days-of-c.html" class="repo-name">100-days-of-c</a>
+                            <span class="label">Public</span>
+                        </div>
+                        <p class="repo-description">100 day code challenge where i have to submit 2 solutions daily for 100 days regularly.</p>
+                        <div class="repo-meta">
+                            <span class="repo-lang"><span class="lang-color c"></span> C</span>
+                        </div>
+                    </div>
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="repo-lawn-tennis.html" class="repo-name">lawn-tennis-score-board</a>
+                            <span class="label">Public</span>
+                        </div>
+                        <p class="repo-description">1st sem c project to make a working model of a lawn tennis score board</p>
+                        <div class="repo-meta">
+                            <span class="repo-lang"><span class="lang-color c"></span> C</span>
+                        </div>
+                    </div>
+                    <div class="repo-card">
+                        <div class="repo-header">
+                            <a href="repo-100-days-dsa.html" class="repo-name">100-days-dsa</a>
+                            <span class="label">Public</span>
+                        </div>
+                        <p class="repo-description"></p>
+                        <div class="repo-meta">
+                        </div>
+                    </div>
+                    <div class="repo-card full-width">
+                        <div class="repo-header">
+                            <a href="repo-100-days-leetcode.html" class="repo-name">100-days-dsa-leetcode</a>
+                            <span class="label">Public</span>
+                        </div>
+                        <p class="repo-description"></p>
+                        <div class="repo-meta">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section heatmap-section">
+                <div class="section-header heatmap-header">
+                    <h3>153 contributions in the last year</h3>
+                    <div class="contribution-settings">
+                        Contribution settings <svg height="16" viewBox="0 0 16 16" width="16"><path fill="currentColor" d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path></svg>
+                    </div>
+                </div>
+                <div class="heatmap-flex">
+                    <div class="heatmap-main">
+                        <div class="calendar-graph">
+                            <div class="months-labels" id="months-labels">
+                                <!-- Months generated by JS -->
+                            </div>
+                            <div class="days-and-graph">
+                                <div class="days-labels">
+                                    <span class="day-label" style="grid-row: 2;">Mon</span>
+                                    <span class="day-label" style="grid-row: 4;">Wed</span>
+                                    <span class="day-label" style="grid-row: 6;">Fri</span>
+                                </div>
+                                <div class="heatmap-container" id="heatmap">
+                                    <!-- Heatmap generated by JS -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heatmap-footer">
+                            <a href="#" class="learn-link">Learn how we count contributions</a>
+                            <div class="heatmap-legend">
+                                <span>Less</span>
+                                <div class="legend-box level-0"></div>
+                                <div class="legend-box level-1"></div>
+                                <div class="legend-box level-2"></div>
+                                <div class="legend-box level-3"></div>
+                                <div class="legend-box level-4"></div>
+                                <span>More</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="year-selector">
+                        <button class="year-btn active">2026</button>
+                        <button class="year-btn">2025</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section activity-section">
+                <div class="section-header">
+                    <h3>Contribution activity</h3>
+                </div>
+                <div class="activity-timeline">
+                    <div class="timeline-month">May 2026</div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <svg height="16" viewBox="0 0 16 16" width="16" class="octicon"><path fill="currentColor" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7l.01.01a.75.75 0 1 1-1.072 1.043 2.474 2.474 0 0 1-.474-1.253V2.5Z"></path></svg>
+                        </div>
+                        <div class="timeline-content">
+                            Created 1 repository
+                            <a href="#" class="repo-link">ayushpal247/flower-recognizer</a>
+                            <span class="timeline-date">May 2</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-block btn-secondary show-more-activity">Show more activity</button>
+            </section>
+            
+            <div class="footer-note">
+                Seeing something unexpected? Take a look at the <a href="https://docs.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile">GitHub profile guide</a>.
+            </div>
+        </main>
+    </div>
+
+        <footer class="footer container-xl width-full p-responsive" role="contentinfo">
+        <h2 class="sr-only">Footer</h2>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li class="footer-logo-copyright">
+                    <a href="https://github.com" aria-label="Homepage" class="footer-octicon" title="GitHub">
+                        <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" class="octicon octicon-mark-github color-fg-muted"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" fill="currentColor"></path></svg>
+                    </a>
+                    <span>© 2026 GitHub, Inc.</span>
+                </li>
+                <li><a href="https://docs.github.com/site-policy/github-terms/github-terms-of-service">Terms</a></li>
+                <li><a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement">Privacy</a></li>
+                <li><a href="https://github.com/security">Security</a></li>
+                <li><a href="https://www.githubstatus.com/">Status</a></li>
+                <li><a href="https://docs.github.com">Docs</a></li>
+                <li><a href="https://support.github.com?tags=dotcom-footer">Contact</a></li>
+                <li><a href="https://docs.github.com/articles/github-privacy-statement/#cookie-policy">Manage cookies</a></li>
+                <li><a href="https://docs.github.com/articles/github-privacy-statement/#do-not-share-my-personal-information">Do not share my personal information</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+</html>
+
+
