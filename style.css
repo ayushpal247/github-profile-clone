@@ -962,59 +962,108 @@ a:hover {
     border: 0;
 }
 
+/* Footer */
 .footer {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 40px;
+    background-color: var(--color-canvas-subtle);
+    border-top: 1px solid var(--color-border-muted);
+    padding: 24px 0;
     font-size: 12px;
     color: var(--color-fg-muted);
 }
 
+/* Footer container */
 .footer-container {
-    border-top: 1px solid var(--color-border-muted);
-    padding-top: 24px;
     max-width: 1280px;
     margin: 0 auto;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 32px;
+    display: flex;
+    justify-content: center;
 }
 
+/* Footer links */
 .footer-links {
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
+    gap: 12px;
+    list-style: none;
     margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
+/* Logo item left */
 .footer-logo-copyright {
+    margin-right: auto;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+/* Icon */
 .footer-octicon {
     color: var(--color-fg-muted);
 }
-
 .footer-octicon:hover {
     color: var(--color-fg-muted);
 }
 
-.footer-links li {
-    margin-right: 16px;
-}
-
-.footer-links li:last-child {
-    margin-right: 0;
-}
-
+/* Links */
 .footer-links a {
-    color: var(--color-accent-fg);
+    color: var(--color-fg-muted);
+    text-decoration: none;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}/* Footer layout */
+.footer {
+    background-color: var(--color-canvas-subtle);
+    border-top: 1px solid var(--color-border-muted);
+    padding: 24px 0;
+    font-size: 12px;
+    color: var(--color-fg-muted);
 }
 
+/* Container centering */
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer links layout */
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Logo item aligns left */
+.footer-logo-copyright {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icon style */
+.footer-octicon {
+    color: var(--color-fg-muted);
+}
+.footer-octicon:hover {
+    color: var(--color-fg-muted);
+}
+
+/* Link styling */
+.footer-links a {
+    color: var(--color-fg-muted);
+    text-decoration: none;
+}
 .footer-links a:hover {
     text-decoration: underline;
 }
