@@ -41,12 +41,12 @@ function generateHeatmap(isPastYear = false) {
             if (reverseIndex === 1) {
                 commits = 10;
             } else if (reverseIndex >= 2 && reverseIndex <= 91) {
-                commits = 1;
+                commits = level === 0 ? 'No' : 1;
             } else {
-                commits = level === 0 ? 'No' : level;
+                commits = 'No';
             }
         } else {
-            commits = level === 0 ? 'No' : level;
+            commits = 'No';
         }
         
         day.setAttribute('data-tooltip', `${commits === 'No' ? 'No' : commits} contributions on ${date.toDateString()}`);
@@ -99,17 +99,16 @@ function getContributionLevel(index, total, isPastYear = false) {
             return 4; // Today: 10 commits (level 4)
         }
         if (reverseIndex >= 2 && reverseIndex <= 91) {
+            // Leave exactly 4 boxes ungreen randomly but consistently (using hardcoded indices)
+            if (reverseIndex === 15 || reverseIndex === 35 || reverseIndex === 60 || reverseIndex === 80) {
+                return 0; // Ungreen
+            }
             return 2; // 90 days before today: 1 commit per day
         }
     }
     
-    // Make the rest of the year mostly green with only ~3-4 ungreen boxes total
-    const random = Math.random();
-    if (random < 0.01) return 0; // ~1% chance of 0 (about 3-4 days in a year)
-    if (random < 0.2) return 1;
-    if (random < 0.6) return 2;
-    if (random < 0.85) return 3;
-    return 4;
+    // Everything before the 90-day streak is ungreen
+    return 0;
 }
 
 function setupTooltips() {
