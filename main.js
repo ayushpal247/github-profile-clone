@@ -43,7 +43,7 @@ function generateHeatmap(isPastYear = false) {
             } else if (reverseIndex >= 2 && reverseIndex <= 91) {
                 commits = level === 0 ? 'No' : 1;
             } else {
-                commits = 'No';
+                commits = level === 0 ? 'No' : level;
             }
         } else {
             commits = 'No';
@@ -107,8 +107,11 @@ function getContributionLevel(index, total, isPastYear = false) {
         }
     }
     
-    // Everything before the 90-day streak is ungreen
-    return 0;
+    // Everything before the 90-day streak (add a few sparse green boxes to look realistic)
+    const random = Math.random();
+    if (random > 0.96) return 2; // Very rare level 2
+    if (random > 0.88) return 1; // Rare level 1
+    return 0; // Mostly empty
 }
 
 function setupTooltips() {
