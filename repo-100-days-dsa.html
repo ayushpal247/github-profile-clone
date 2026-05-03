@@ -104,12 +104,20 @@
                     for (let i = 0; i < 100; i++) {
                         const dayNum = (i + 1).toString().padStart(2, '0');
                         const problemName = problems[i] || `DSA Problem ${dayNum}`;
-                        const commitDate = new Date(now);
-                        commitDate.setDate(now.getDate() - (100 - i));
                         
-                        const dateString = i === 99 ? "Today" : 
-                                         (100 - i) < 7 ? `${100 - i} days ago` :
-                                         commitDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                        let dateString;
+                        if (i >= 90) {
+                            dateString = "Today";
+                        } else {
+                            const daysAgo = 90 - i;
+                            if (daysAgo < 7) {
+                                dateString = daysAgo === 1 ? "Yesterday" : `${daysAgo} days ago`;
+                            } else {
+                                const commitDate = new Date(now);
+                                commitDate.setDate(now.getDate() - daysAgo);
+                                dateString = commitDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                            }
+                        }
 
                         const row = document.createElement('div');
                         row.className = 'file-row';

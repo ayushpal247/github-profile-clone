@@ -18,67 +18,98 @@ function generateHeatmap(isPastYear = false) {
         now.setFullYear(now.getFullYear() - 1);
     }
     
+    generateMonths(now, isPastYear, totalDays);
+    
     for (let i = 0; i < totalDays; i++) {
         const day = document.createElement('div');
         day.classList.add('day');
         
         const date = new Date(now);
-        date.setDate(now.getDate() - (totalDays - i));
+        date.setDate(now.getDate() - (totalDays - 1 - i));
         
-        const isLast90Days = !isPastYear && (totalDays - i) <= 90;
         const isToday = !isPastYear && (i === totalDays - 1);
+        const reverseIndex = totalDays - i;
         
-        let level = getContributionLevel(i, totalDays, isLast90Days, isPastYear);
-        if (isToday) level = 4; // Force level 4 for today
+        let level = getContributionLevel(i, totalDays, isPastYear);
         
         if (level > 0) {
             day.classList.add(`level-${level}`);
         }
         
-        // Tooltip logic: cap at 3, but today is 10
-        let commits;
-        if (isToday) {
-            commits = 10;
+        let commits = 'No';
+        if (!isPastYear) {
+            if (reverseIndex === 1) {
+                commits = 10;
+            } else if (reverseIndex >= 2 && reverseIndex <= 91) {
+                commits = 1;
+            } else {
+                commits = level === 0 ? 'No' : level;
+            }
         } else {
-            commits = level === 0 ? 'No' : (isPastYear ? Math.min(level + 1, 4) : Math.min(level, 3));
+            commits = level === 0 ? 'No' : level;
         }
         
-        day.setAttribute('data-tooltip', `${commits} contributions on ${date.toDateString()}`);
+        day.setAttribute('data-tooltip', `${commits === 'No' ? 'No' : commits} contributions on ${date.toDateString()}`);
         heatmap.appendChild(day);
     }
     setupTooltips();
 }
 
-function getContributionLevel(index, total, isLast90Days, isPastYear = false) {
+function generateMonths(now, isPastYear, totalDays) {
+    const monthsContainer = document.getElementById('months-labels');
+    if (!monthsContainer) return;
+    monthsContainer.innerHTML = '';
+    
+    const startDate = new Date(now);
+    // top-left date corresponds to i=0
+    startDate.setDate(startDate.getDate() - (totalDays - 1));
+    
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+    let months = [];
+    for (let c = 0; c < 53; c++) {
+        const colDate = new Date(startDate);
+        colDate.setDate(startDate.getDate() + c * 7);
+        const month = colDate.getMonth();
+        
+        if (months.length === 0 || months[months.length - 1].month !== month) {
+            months.push({ month, col: c });
+        }
+    }
+    
+    // Remove the first month label if it overlaps with the second one
+    if (months.length > 1 && months[1].col - months[0].col <= 2) {
+        months.shift();
+    }
+    
+    months.forEach(m => {
+        const span = document.createElement('span');
+        span.classList.add('month-label');
+        span.textContent = monthNames[m.month];
+        span.style.left = `${m.col * 13}px`;
+        monthsContainer.appendChild(span);
+    });
+}
+
+function getContributionLevel(index, total, isPastYear = false) {
     const reverseIndex = total - index; // 1 is today, 2 is yesterday...
     
-    if (isLast90Days) {
-        // Force ungreen for exactly 3 days (e.g., 45, 60, 75 days ago)
-        if (reverseIndex === 45 || reverseIndex === 60 || reverseIndex === 75) {
-            return 0;
+    if (!isPastYear) {
+        if (reverseIndex === 1) {
+            return 4; // Today: 10 commits (level 4)
         }
-        
-        // Return a level 1-4 for everything else in the last 90 days
-        const random = Math.random();
-        if (random > 0.8) return 4;
-        if (random > 0.5) return 3;
-        if (random > 0.2) return 2;
-        return 1;
+        if (reverseIndex >= 2 && reverseIndex <= 91) {
+            return 2; // 90 days before today: 1 commit per day
+        }
     }
     
-    if (isPastYear) {
-        const random = Math.random();
-        if (random > 0.9) return 3;
-        if (random > 0.7) return 2;
-        if (random > 0.5) return 1;
-        return 0;
-    }
-
-    // Sparse activity for older days
+    // Make the rest of the year mostly green with only ~3-4 ungreen boxes total
     const random = Math.random();
-    if (random > 0.98) return 2;
-    if (random > 0.95) return 1;
-    return 0;
+    if (random < 0.01) return 0; // ~1% chance of 0 (about 3-4 days in a year)
+    if (random < 0.2) return 1;
+    if (random < 0.6) return 2;
+    if (random < 0.85) return 3;
+    return 4;
 }
 
 function setupTooltips() {
